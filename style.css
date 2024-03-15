@@ -76,8 +76,6 @@ ul{
 /* Header */
 header{
     width: 100%;
-    height: 0;
-    overflow: hidden;
     position: sticky;
     top: 0;
     left: 0;
@@ -102,6 +100,12 @@ header nav ol li::before{
     counter-increment: compteListe 1;
     content: '0' counter(compteListe) '.';
     margin-right: 5px;
+}
+.element{
+    height: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 /* Loading */
 .load-container{

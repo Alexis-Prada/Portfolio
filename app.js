@@ -11,9 +11,9 @@ window.addEventListener(`load`, ()=>{
     .add(()=>{
         document.querySelector(`.load-container`).style.display = `none`;
     })
-    .to(`header`, {height: `10vh`, duration: 0.2, delay: 0.5})
-    .to(`.hero`, {opacity: 1, duration: 0.2, delay: 0.5})
-    .to(`.navbar`, {opacity: 1, duration: 0.2, delay: 0.5})
+    gsap.to(`.element`, {height: `10vh`, stagger: {each: 0.3}, duration: 0.8, delay: 4.5})
+    gsap.to(`.hero`, {opacity: 1, duration: 0.8, delay: 6})
+    gsap.to(`.navbar`, {opacity: 1, duration: 0.8, delay: 6.5})
 });
 
 //-----------------------------------------------------------
