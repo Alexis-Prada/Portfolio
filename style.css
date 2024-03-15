@@ -6,8 +6,8 @@
 }
 /* General */
 :root{
-    /* --bg: #333A73; */
-    --bg: #3756F9;
+    --bg: #333A73;
+    /* --bg: #3756F9; */
     /* --orange: #FBA834; */
     --orange: #ff9646;
     /* --white: #F0F3FF; */
@@ -80,7 +80,8 @@ header{
     position: sticky;
     top: 0;
     left: 0;
-    background-color: rgba(55, 86, 249, 0.85);
+    /* background-color: rgba(55, 86, 249, 0.85); */
+    background-color: #333a738b;
     backdrop-filter: blur(4px);
     color: var(--orange);
     font-family: "Roboto Mono", monospace;
@@ -106,22 +107,41 @@ header nav ol li::before{
     position: absolute;
     width: 100%;
     height: 100vh;
-    background-color: var(--bg);
+    /* background-color: rgb(16, 38, 152); */
+    background-color: #242952;
     z-index: 10;
 }
-.load-container div{
+.container{
     position: absolute;
     transform: translate(-50%, -50%);
     top: 40%;
     left: 50%;
-    letter-spacing: 0.8rem;
-    width: 100%;
-    text-align: center;
     color: var(--white);
     font-size: 6rem;
+    overflow: hidden;
+    width: 0;
+    font-family: "Lato", sans-serif;
 }
-.d-none{
-    display: none;
+.load-container-bottom{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 70%;
+    display: flex;
+    flex-direction: column;
+}
+.dot-container{
+    display: flex;
+    gap: 6px;
+}
+.dot, .shadow{
+    background-color: var(--white);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.shadow{
+    opacity: 0.3;
 }
 
 /* Hero */

@@ -1,12 +1,18 @@
 //---------------------------------------
 // Fonction pour le chargement de la page
 //---------------------------------------
-// let anim = document.querySelector(`.load-container p`);
-// new Typewriter(anim).pauseFor(500).changeDelay(70).typeString(`Welcome ;)`).start();
-
-let loader = document.querySelector(`.load-container`);
 window.addEventListener(`load`, ()=>{
-    setTimeout(()=>{
-        loader.classList.add(`d-none`);
-    },3000);
+    gsap.to(`.dot`, {y: -50, stagger: {each: 0.2, repeat: -1, yoyo: true}});
+    gsap.to(`.shadow`, {y: 50, stagger: {each: 0.2, repeat: -1, yoyo: true}, opacity: 0.1});
+    let TLLOAD = gsap.timeline();
+    TLLOAD
+    .to(`.container`, {width: 550, duration: 2, delay: 1, ease: `power2.out`})
+    .to(`.load-container`, {opacity: 0, duration: 0.4, delay: 1.3})
+    .add(()=>{
+        document.querySelector(`.load-container`).style.display = `none`;
+    })
 });
+
+//-----------------------------------------------------------
+// Fonction pour faire disparaitre et réaparraitre la nav bar
+//-----------------------------------------------------------
