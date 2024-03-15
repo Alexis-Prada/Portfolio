@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* General */
+:root{
+    /* --bg: #333A73; */
+    --bg: #3756F9;
+    /* --orange: #FBA834; */
+    --orange: #ff9646;
+    /* --white: #F0F3FF; */
+    --white: #FBFBFB;
+    --gris: #C7C7C7;
+}
+body{
+    background-color: var(--bg);
+}
+h1{
+    font-size: calc(5rem + 2vw);
+    color: var(--white);
+    font-family: "Lato", sans-serif;
+}
+h3{
+    font-size: 1.5rem;
+}
+h4{
+    font-size: 1.5rem;
+    color: var(--gris);
+    font-family: "Roboto Mono", monospace;
+    font-weight: 400;
+}
+a{
+    font-family: "Roboto Mono", monospace;
+    text-decoration: none;
+    color: var(--gris);
+    font-weight: 300;
+}
+a:hover{
+    color: var(--orange);
+}
+a :visited , :link , :focus{
+    color: var(--gris);
+}
+p{
+    font-family: "Lato", sans-serif;
+}
+ul{
+    list-style: none;
+}
+
+/* Flexbox */
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+.justify-between{
+    justify-content: space-between;
+}
+.justify-center{
+    justify-content: center;
+}
+.align-center{
+    align-items: center;
+}
+
+/* Container */
+.container-1200{
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Header */
+header{
+    width: 100%;
+    height: 10vh;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: rgba(55, 86, 249, 0.85);
+    backdrop-filter: blur(4px);
+    color: var(--orange);
+    font-family: "Roboto Mono", monospace;
+    padding: 0 48px;
+}
+header nav{
+    width: 60%;
+}
+header nav ol{
+    width: 100%;
+    justify-content: end;
+    gap: 64px;
+    list-style: none;
+    counter-reset: compteListe;
+}
+header nav ol li::before{
+    counter-increment: compteListe 1;
+    content: '0' counter(compteListe) '.';
+    margin-right: 5px;
+}
+/* Loading */
+.load-container{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg);
+    z-index: 10;
+}
+.load-container div{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 40%;
+    left: 50%;
+    letter-spacing: 0.8rem;
+    width: 100%;
+    text-align: center;
+    color: var(--white);
+    font-size: 6rem;
+}
+.d-none{
+    display: none;
+}
+
+/* Hero */
+.hero{
+    text-align: center;
+    margin-top: 10rem;
+    height: 180px;
+    flex-direction: column;
+}
+
+/* Navbar */
+.navbar{
+    position: fixed;
+    bottom: -5px;
+}
+.navbar a:hover{
+    transform: translate(0, -20px);
+}
+.navbar::after{
+    content : "";
+    width: 1px;
+    height: 100px;
+    background-color: var(--gris);
+    display: inline-block;
+}
+.navbar-left::after{
+    margin-left: 8px;
+}
+.navbar-left{
+    left: 3.5%;
+}
+.navbar-left li{
+    width: fit-content;
+    margin-bottom: 32px;
+    font-size: 20px;
+}
+.navbar-right{
+    right: 3.5%;
+    writing-mode: vertical-rl;
+    letter-spacing: 0.1em;
+}
+.navbar-right a{
+    margin-bottom: 32px;
+    font-size: 13px;
+}
+
+main p{
+    margin-top: 40rem;
+}
